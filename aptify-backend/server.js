@@ -1,10 +1,24 @@
 import express from "express";
+import cookieParser from "cookie-parser";
+import morgan from "morgan";
 import { ENV } from "./src/config/env.js";
 import { connectDB } from "./src/lib/db.js";
+
+/* import routes here */ 
+import userAuth from "./src/routes/auth.routes.js"
 
 const app = express();
 
 const PORT = ENV.PORT;
+
+if (process.env.NODE_ENV != "production") {
+  app.use(morgan("dev"));
+}
+
+app.use(express.json());
+app.use(cookieParser());
+
+app.use("/api/auth", userAuth)
 
 
 const startServer = async () => {

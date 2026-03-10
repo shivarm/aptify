@@ -1,0 +1,12 @@
+{
+  "name": "aptify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix aptify-backend && npm install --prefix aptify-frontend && npm run build --prefix aptify-frontend",
+    "start": "npm run start --prefix aptify-backend"
+  },
+  "author": "Shivam Sharma",
+  "license": "MIT",
+  "description": "deployment scripts for aptify"
+}

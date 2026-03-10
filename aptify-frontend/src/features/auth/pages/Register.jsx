@@ -1,9 +1,38 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router";
 
 const Register = () => {
-  return (
-    <div>Register</div>
-  )
-}
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
-export default Register
+
+  return (
+    <main>
+      <div className="form-container">
+        <h1>Register yourself</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="username">Username</label>
+            <input type="username" name="username" id="username" />
+          </div>
+          <div className="input-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <button className="button primary-button">Register</button>
+        </form>
+        <p>
+          Already registered? <Link to={"/login"}>Login</Link>
+        </p>
+      </div>
+    </main>
+  );
+};
+
+export default Register;

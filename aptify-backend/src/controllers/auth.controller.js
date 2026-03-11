@@ -53,7 +53,14 @@ export const register = async (req, res) => {
 
     await newUser.save();
 
-    res.status(201).json({ message: "User register successfully" });
+    res.status(201).json({
+      message: "User register successfully",
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+      },
+    });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
   }
@@ -96,7 +103,14 @@ export const login = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
     });
 
-    return res.status(200).json({ message: "Login successful" });
+    return res.status(200).json({
+      message: "Login successful",
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+      },
+    });
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
   }

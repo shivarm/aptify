@@ -1,5 +1,6 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 import morgan from "morgan";
 import { ENV } from "./src/config/env.js";
 import { connectDB } from "./src/lib/db.js";
@@ -17,6 +18,10 @@ if (process.env.NODE_ENV != "production") {
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+  origin: ENV.CLIENT_ORIGIN,
+  credentials: true
+}))
 
 app.use("/api/auth", userAuth)
 

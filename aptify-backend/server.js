@@ -6,7 +6,7 @@ import { ENV } from "./src/config/env.js";
 import { connectDB } from "./src/lib/db.js";
 
 /* import routes here */ 
-import AuthRoutes from "./src/routes/auth.routes.js"
+import authRoutes from "./src/routes/auth.routes.js"
 import interviewRoutes from "./src/routes/interview.routes.js";
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(cors({
   credentials: true
 }))
 
-app.use("/api/auth", AuthRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/interview", interviewRoutes);
 
 

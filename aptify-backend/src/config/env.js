@@ -6,5 +6,6 @@ export const ENV = {
   PORT: process.env.PORT,
   DATABASE_URL: process.env.DATABASE_URL,
   JWT_SECRET: process.env.JWT_SECRET,
-  CLIENT_ORIGIN: process.env.CLIENT_ORIGIN
+  CLIENT_ORIGIN: process.env.CLIENT_ORIGIN,
+  GEMNI_API_KEY: process.env.GEMNI_API_KEY
 };

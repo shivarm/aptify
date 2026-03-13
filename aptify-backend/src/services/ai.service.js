@@ -83,7 +83,7 @@ const interviewReportSchema = z.object({
   title: z.string().describe("The title of the job for which the interview report is generated"),
 });
 
-const generateInterviewReport = async ({ resume, selfDescription, jobDescription }) => {
+export const generateInterviewReport = async ({ resume, selfDescription, jobDescription }) => {
   const prompt = `Generate an interview report for a candidate with the following details:
                         Resume: ${resume}
                         Self Description: ${selfDescription}

@@ -32,7 +32,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/interview", interviewRoutes);
 
 if (ENV.NODE_ENV === "production") {
-  const clientDistPath = path.resolve(__dirname, "../../aptify-frontend/dist");
+  // From aptify-backend to ai-app, then into aptify-frontend/dist
+  const clientDistPath = path.resolve(__dirname, "../aptify-frontend/dist");
   
   app.use(express.static(clientDistPath));
 

@@ -46,7 +46,7 @@ const Login = () => {
           <button className="button primary-button">Login</button>
         </form>
         <p>
-          Did't register? <Link to={"/register"}>Login</Link>
+          Did't register? <Link to={"/register"}>Register</Link>
         </p>
       </div>
     </main>

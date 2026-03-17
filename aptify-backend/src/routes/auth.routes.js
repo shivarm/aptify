@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { register, login, logout, getMe } from "../controllers/auth.controller.js";
 import { authUser } from "../middleware/auth.middleware.js";
+import { authLimit, apiLimit } from "../lib/rateLimit.js";
 
 const router = Router();
 
@@ -17,20 +18,20 @@ router.post("/user/register", register);
  * @description Login user
  * @access Public
  */
-router.post("/user/login", login);
+router.post("/user/login", authLimit, login);
 
 /**
  * @route POST /api/auth/user/logout
  * @description Logout user
  * @access Public
  */
-router.post("/user/logout", logout);
+router.post("/user/logout", authLimit, logout);
 
 /**
  * @route GET /api/auth/user/me
  * @description Return authenticated user
  * @access Public
  */
-router.get("/user/me", authUser, getMe);
+router.get("/user/me", apiLimit, authUser, getMe);
 
 export default router;

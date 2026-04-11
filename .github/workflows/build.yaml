@@ -29,7 +29,7 @@ jobs:
             aptify-frontend/package-lock.json
 
       - name: Run CodeGuardian scanner (CI mode)
-        run: npx codeguardian --ci
+        run: npx @shivam-sharma/codeguardian --ci
         
       - name: Build
         run: npm run build --if-present

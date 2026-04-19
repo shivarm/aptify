@@ -10,6 +10,8 @@ import authRoutes from "./src/routes/auth.routes.js"
 import interviewRoutes from "./src/routes/interview.routes.js";
 
 const app = express();
+// Trust first proxy (needed for Render and other cloud hosts)
+app.set('trust proxy', 1);
 
 const PORT = ENV.PORT;
 

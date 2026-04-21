@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "../style/home.scss";
 import { useInterview } from "../hooks/useInterview.js";
 import { useNavigate } from "react-router";
+import { RingLoader } from "react-spinners";
 
 const Home = () => {
   const { loading, generateReport, reports } = useInterview();
@@ -20,7 +21,7 @@ const Home = () => {
   if (loading) {
     return (
       <main className="loading-screen">
-        <h1>Loading your interview plan...</h1>
+        <RingLoader color="#1c9cdc" />
       </main>
     );
   }

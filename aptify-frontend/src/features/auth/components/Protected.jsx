@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../hooks/useAuth";
 import { Navigate } from "react-router";
+import { RingLoader } from "react-spinners";
 
 const protectedRoute = ({ children }) => {
   const { loading, user } = useAuth();
@@ -8,7 +9,7 @@ const protectedRoute = ({ children }) => {
   if (loading) {
     return (
       <main>
-        <h1>Loading.....</h1>
+        <RingLoader color="#1c9cdc" />
       </main>
     );
   }

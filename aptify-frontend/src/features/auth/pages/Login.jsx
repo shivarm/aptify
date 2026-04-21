@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../auth.form.scss";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "../hooks/useAuth";
+import { RingLoader } from "react-spinners";
 
 const Login = () => {
   const { loading, handleLogin } = useAuth();
@@ -17,7 +18,7 @@ const Login = () => {
   };
 
   if (loading) {
-    return (<main><h1>Loading.....</h1></main>)
+    return (<main><RingLoader color="#1c9cdc" /></main>)
   }
 
   return (

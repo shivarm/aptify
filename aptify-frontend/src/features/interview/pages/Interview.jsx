@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../style/interview.scss";
 import { useInterview } from "../hooks/useInterview.js";
 import { useNavigate, useParams } from "react-router";
+import { RingLoader } from "react-spinners";
 
 const NAV_ITEMS = [
   {
@@ -136,7 +137,7 @@ const Interview = () => {
   if (loading || !report) {
     return (
       <main className="loading-screen">
-        <h1>Loading your interview plan...</h1>
+        <RingLoader color="#1c9cdc" />
       </main>
     );
   }

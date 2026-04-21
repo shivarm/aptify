@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { ENV } from "./src/config/env.js";
 import { connectDB } from "./src/lib/db.js";
+import dns from "node:dns"
 
 /* import routes here */ 
 import authRoutes from "./src/routes/auth.routes.js"
@@ -18,7 +19,7 @@ const PORT = ENV.PORT;
 if (ENV.NODE_ENV != "production") {
   app.use(morgan("dev"));
 }
-
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({

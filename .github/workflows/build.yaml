@@ -31,5 +31,5 @@ jobs:
       - name: Run CodeGuardian scanner (CI mode)
         run: npx @shivam-sharma/codeguardian --ci
         
-      - name: Build
+      - name: Install dependencies and Build
         run: npm run build --if-present

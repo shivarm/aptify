@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix aptify-backend",
-    "start": "npm run start --prefix aptify-backend"
+    "build": "npm install --prefix aptify-backend && npm install --prefix aptify-frontend && npm run build --prefix aptify-frontend"
   },
   "author": "Shivam Sharma",
   "license": "MIT",
